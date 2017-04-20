@@ -157,6 +157,7 @@ function log_nginx() {
 function clean() {
     stop
     run_cmd "docker run --rm $docker_run_fg_mode -v /opt/data:/opt/data $nginx_image rm -rf $app_storage_path"
+    run_cmd "rm $devops_path/.developer"
 }
 
 function help() {
